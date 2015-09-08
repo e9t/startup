@@ -1,5 +1,0 @@
-#! /usr/bin/python2.7
-# -*- coding: utf-8 -*-
-
-%matplotlib inline
-%config InlineBackend.figure_format = 'retina'
