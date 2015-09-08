@@ -2,6 +2,13 @@
 # -*- coding: utf-8 -*-
 
 
+%load_ext autoreload  # Reload all modules automatically
+%autoreload 2
+
+%load_ext Cython
+
+
+# Configurations for notebook only
 from IPython import get_ipython
 
 if 'terminal' not in str(get_ipython()):
