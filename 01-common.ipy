@@ -2,12 +2,19 @@
 # -*- coding: utf-8 -*-
 
 
-#%load_ext autoreload   # Reload all modules automatically
+# WARNING: Comments cannot be inline
+
+
+# Reload all modules automatically
+#%load_ext autoreload
 #%autoreload 2
 
+# After installing cython
 %load_ext Cython
-%load_ext rpy2.ipython  # After installing [rpy2](http://rpy.sourceforge.net/rpy2/doc-2.4/html/interactive.html#module-rpy2.ipython.rmagic) @python
-%load_ext julia.magic   # After installin pyjulia @python + PyCall @julia
+# After installing [rpy2](http://rpy.sourceforge.net/rpy2/doc-2.4/html/interactive.html#module-rpy2.ipython.rmagic) @python
+%load_ext rpy2.ipython
+# After installing pyjulia @python + PyCall @julia
+%load_ext julia.magic
 
 
 # Configurations for notebook only
