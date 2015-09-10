@@ -5,11 +5,13 @@ import sys
 # WARNING: Comments cannot be inline
 
 
+# Reload all modules automatically
+%load_ext autoreload
+%autoreload 2
+
+
 # Configurations for Python2 only
 if sys.version_info[0] < 3:
-    # Reload all modules automatically
-    #%load_ext autoreload
-    #%autoreload 2
 
     # After installing cython
     %load_ext Cython
