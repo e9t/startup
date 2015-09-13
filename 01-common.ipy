@@ -10,17 +10,20 @@ import sys
 %autoreload 2
 
 
-# Configurations for Python2 only
-if sys.version_info[0] < 3:
-
-    # After installing cython
-    %load_ext Cython
-
-    # After installing [rpy2](http://rpy.sourceforge.net/rpy2/doc-2.4/html/interactive.html#module-rpy2.ipython.rmagic) @python
-    %load_ext rpy2.ipython
-
-    # After installing pyjulia @python + PyCall @julia
-    %load_ext julia.magic
+def loadl(opt):
+    # Configurations for Python2 only
+    if sys.version_info[0] < 3:
+        if opt=='cython':
+            # After installing cython
+            %load_ext Cython
+        elif opt=='r':
+            # After installing [rpy2](http://rpy.sourceforge.net/rpy2/doc-2.4/html/interactive.html#module-rpy2.ipython.rmagic) @python
+            %load_ext rpy2.ipython
+        elif opt=='julia':
+            # After installing pyjulia @python + PyCall @julia
+            %load_ext julia.magic
+    else:
+        raise Exception('Language loading not supported for Python 3+')
 
 
 # Configurations for notebook only
