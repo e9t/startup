@@ -27,3 +27,12 @@ def write_json(data, filename, indent=2):
     # TODO: [ensure ascii](http://stackoverflow.com/a/18337754/1054939)
     with open(filename, 'w') as f:
         json.dump(data, f, indent=indent)
+
+
+def read_pickle(filename):
+    with open(filename, 'rb') as f:
+        return pickle.load(f)
+
+def write_pickle(obj, filename):
+    with open(filename, 'wb') as f:
+        pickle.dump(obj, f)
