@@ -25,7 +25,7 @@ def tic(line):
 
 def toc(line):
     global t0
-    print format_time(time.time() - t0)
+    print(format_time(time.time() - t0))
 
 
 ip = get_ipython()
