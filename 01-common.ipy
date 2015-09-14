@@ -24,11 +24,3 @@ def loadl(opt):
             %load_ext julia.magic
     else:
         raise Exception('Language loading not supported for Python 3+')
-
-
-# Configurations for notebook only
-from IPython import get_ipython
-
-if 'terminal' not in str(get_ipython()):
-    %matplotlib inline
-    %config InlineBackend.figure_format = 'retina'

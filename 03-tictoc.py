@@ -28,6 +28,8 @@ def toc(line):
     print(format_time(time.time() - t0))
 
 
+from IPython import get_ipython
+
 ip = get_ipython()
 ip.register_magic_function(tic)
 ip.register_magic_function(toc)

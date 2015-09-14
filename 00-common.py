@@ -12,8 +12,6 @@ import re
 import site
 import sys
 
-from matplotlib import pyplot as plt
-from matplotlib import rcParams; oldparams = rcParams.copy()  # rcParams.update(oldparams)
 import numpy as np
 import pandas as pd
 from pandas.io.packers import pack, unpack  # pickle이 느릴 때
