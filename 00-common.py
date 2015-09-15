@@ -19,14 +19,3 @@ import scipy as sp
 
 from konlpy.tag import Twitter
 from konlpy.utils import pprint
-
-#import lzma
-#from rpy2 import robjects as ro
-#from rpy2.robjects.numpy2ri import numpy2ri as np2ri
-#import shelve
-
-#if not any(site.USER_SITE in p for p in sys.path):
-#    known_paths = set(sys.path)
-#    site.addusersitepackages(known_paths)
-#    site.addsitedir(site.USER_SITE, known_paths)
-#    sys.path[:] = list(known_paths) + sys.path
