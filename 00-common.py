@@ -19,3 +19,8 @@ import scipy as sp
 
 from konlpy.tag import Twitter
 from konlpy.utils import pprint
+
+
+from IPython import get_ipython
+
+ip = get_ipython()

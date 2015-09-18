@@ -1,7 +1,8 @@
 #! /usr/bin/python
 # -*- coding: utf-8 -*-
 
-from IPython.core.display import HTML
+from pprint import pprint
+from IPython.display import HTML, Javascript
 
 publish_css = '''
 <style>
@@ -12,3 +13,6 @@ publish_css = '''
 '''
 
 # publish: `HTML(publish_css)`
+
+np.set_printoptions(precision=4, edgeitems=4)
+pd.set_option('display.max_rows', 240)

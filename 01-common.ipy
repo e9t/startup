@@ -10,6 +10,14 @@ import sys
 %autoreload 2
 
 
+# [Load profilers](http://scikit-learn.org/stable/developers/performance.html)
+# basics: %timeit, %prun
+# line_profiler: %lprun
+%load_ext line_profiler
+# memory_profiler: %mprun, %memit
+%load_ext memory_profiler
+
+
 def loadl(opt):
     # Configurations for Python2 only
     if sys.version_info[0] < 3:
@@ -24,3 +32,4 @@ def loadl(opt):
             %load_ext julia.magic
     else:
         raise Exception('Language loading not supported for Python 3+')
+
