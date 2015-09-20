@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 
+from numpy.random import randn, randint
+
 # a sample dataframe for testing purposes
 n = 1000
 sdf = pd.DataFrame({
