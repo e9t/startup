@@ -6,6 +6,7 @@
 
 from datetime import date, datetime, timedelta
 from collections import Counter, defaultdict, namedtuple
+import math
 import os
 import pickle
 import re
