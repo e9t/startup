@@ -31,12 +31,25 @@ def cprint(obj, color='red'):
 def csv(line, cell):
     ''' Usage:
 
-        %%csv
+        %%csv ,
         a,b,c
         d,e,f
+
+        %%csv
+        a b c
+        d e f
+
+        %%csv |
+        a|b|c
+        d|e|f
     '''
+    if line:
+        delim = line.split()[0]
+    else:
+        delim = None
+
     string = '<table>'
     for rows in cell.split('\n'):
-        string += '<tr><td>%s</td></tr>' % '</td><td>'.join(rows.split(','))
+        string += '<tr><td>%s</td></tr>' % '</td><td>'.join(rows.split(delim))
     string += '</table>'
     return HTML(string)
