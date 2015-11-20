@@ -6,7 +6,7 @@
 
 from datetime import date, datetime, timedelta
 from collections import Counter, defaultdict, namedtuple
-import math
+from glob import glob
 import os
 import pickle
 import re
@@ -20,7 +20,6 @@ import scipy as sp
 
 from konlpy.tag import Twitter
 from konlpy.utils import pprint
-
 
 from IPython import get_ipython
 
