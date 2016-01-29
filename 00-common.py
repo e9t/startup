@@ -17,6 +17,7 @@ import numpy as np
 import pandas as pd
 from pandas.io.packers import pack, unpack  # pickle이 느릴 때
 import scipy as sp
+from scipy import stats
 
 from konlpy.tag import Twitter
 from konlpy.utils import pprint
