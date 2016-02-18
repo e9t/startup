@@ -13,3 +13,4 @@ else:
 
 from matplotlib import pyplot as plt
 from matplotlib import rcParams; oldparams = rcParams.copy()  # rcParams.update(oldparams)
+from IPython.core.pylabtools import figsize
