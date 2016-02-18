@@ -2,11 +2,6 @@
 # -*- coding: utf-8 -*-
 
 
-# Change me (ex: /home/epark/dev/pkgs/spark-1.5.0-bin-hadoop2.6)
-# You may also want to change py4j's path below
-SPARK_HOME = ''
-
-
 def start_spark(core=8, mem=1.5, driver_mem=1, executor_core=1):
     if not SPARK_HOME:
         raise Exception(\

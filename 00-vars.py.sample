@@ -1,0 +1,16 @@
+#! /usr/bin/python2.7
+# -*- coding: utf-8 -*-
+
+
+'''
+Change the variables below to be used in other files
+'''
+
+# 07-spark.py
+# You may also want to change py4j's path in this file
+SPARK_HOME = 'ex:/home/epark/dev/pkgs/spark-1.5.0-bin-hadoop2.6'
+
+
+# Check if variables are filled in
+if SPARK_HOME.startswith('ex:'):
+    raise Exception('Fill in variables in 00-vars.py')
