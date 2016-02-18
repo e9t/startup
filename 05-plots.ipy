@@ -1,7 +1,6 @@
 #! /usr/bin/python
 # -*- coding: utf-8 -*-
 
-
 if 'terminal' in str(get_ipython()):
     import matplotlib
     matplotlib.use('Agg')
@@ -13,3 +12,21 @@ else:
 
 from matplotlib import pyplot as plt
 from matplotlib import rcParams; oldparams = rcParams.copy()  # rcParams.update(oldparams)
+
+
+# Change fonts to support Korean (you may have to install some of the fonts manually)
+# Source: https://www.lucypark.kr/slides/2015-pyconkr/#51
+from matplotlib import font_manager, rc
+from sys import platform as _platform
+
+if _platform == "linux" or _platform == "linux2": # linux
+    font_fname = '/usr/share/fonts/nanumfont/NanumGothic.ttf'
+elif _platform == "darwin": # MAC OS X
+    font_fname = '/Library/Fonts/AppleGothic.ttf'
+elif _platform == "win32": # Windows
+    font_fname = 'c:/windows/fonts/gulim.ttc'
+else:
+    raise Exception('Unknown OS')
+
+font_name = font_manager.FontProperties(fname=font_fname).get_name()
+rc('font', family=font_name)
