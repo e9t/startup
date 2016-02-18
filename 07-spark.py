@@ -7,8 +7,7 @@
 SPARK_HOME = ''
 
 
-def run_spark(core=8, mem=1.5, driver_mem=1, executor_core=1):
-
+def start_spark(core=8, mem=1.5, driver_mem=1, executor_core=1):
     if not SPARK_HOME:
         raise Exception(\
             'Enter path for SPARK_HOME at the startup script `07-spark.py` to use spark')
@@ -24,5 +23,14 @@ def run_spark(core=8, mem=1.5, driver_mem=1, executor_core=1):
     os.environ['SPARK_HOME'] = SPARK_HOME
     os.environ['PYSPARK_SUBMIT_ARGS'] = PYSPARK_SUBMIT_ARGS
     sys.path.extend(PYTHONPATH)
-    print PYSPARK_SUBMIT_ARGS
+    print(PYSPARK_SUBMIT_ARGS)
     execfile(PYTHONSTARTUP, globals())
+
+
+def status_spark():
+    if 'sc' in locals() and 'SparkContext' in sc.__repr__():
+        print('Spark running')
+        return True
+    else:
+        print('Spark not running')
+        return False
