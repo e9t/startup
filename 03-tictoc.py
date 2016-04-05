@@ -4,6 +4,7 @@
 # Code from https://github.com/ipython/ipython-in-depth/blob/master/exercises/Customization/soln/tictocf.py
 
 
+from functools import wraps
 import time
 
 
@@ -26,6 +27,16 @@ def tic(line):
 def toc(line):
     global t0
     print(format_time(time.time() - t0))
+
+
+def timer(f):
+  @wraps(f)
+  def wrapper(*args, **kwargs):
+    s = time.time()
+    r = f(*args, **kwargs)
+    print('TIMER: %s took %f seconds' % (f.__name__, time.time() - s))
+    return r
+  return wrapper
 
 
 ip.register_magic_function(tic)
