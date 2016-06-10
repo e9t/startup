@@ -1,6 +1,25 @@
 #! /usr/bin/python2.7
 # -*- coding: utf-8 -*-
 
+
+from IPython import get_ipython
+
+ip = get_ipython()
+
+
+# NOTE: `UserWarning:  This call to matplotlib.use() has no effect because the backend has already been chosen;`
+#   occurs if not stated before everything else, possibly because some other module in this file is choosing a backend.
+#   Would be preferable to find that module and remove it, or do whatever is necessary to remove the warning.
+
+if 'terminal' in str(ip):
+    import matplotlib
+    matplotlib.use('Agg')
+else:
+    # Configurations for notebook only
+    %matplotlib inline
+    %config InlineBackend.figure_format = 'retina'
+
+
 ####################
 # Python settings  #
 ####################
@@ -25,10 +44,6 @@ from scipy import stats
 
 from konlpy.tag import Twitter
 from konlpy.utils import pprint
-
-from IPython import get_ipython
-
-ip = get_ipython()
 
 
 def pprofile(df):

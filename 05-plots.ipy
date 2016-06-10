@@ -1,14 +1,6 @@
 #! /usr/bin/python
 # -*- coding: utf-8 -*-
 
-if 'terminal' in str(get_ipython()):
-    import matplotlib
-    matplotlib.use('Agg')
-else:
-    # Configurations for notebook only
-    %matplotlib inline
-    %config InlineBackend.figure_format = 'retina'
-
 
 from matplotlib import pyplot as plt
 from matplotlib import rcParams; oldparams = rcParams.copy()  # rcParams.update(oldparams)
